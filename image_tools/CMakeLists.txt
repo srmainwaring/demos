@@ -16,7 +16,12 @@ find_package(rclcpp REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
-find_package(OpenCV REQUIRED COMPONENTS core highgui imgcodecs imgproc videoio)
+find_package(OpenCV
+  REQUIRED
+  COMPONENTS core highgui imgcodecs imgproc videoio
+  PATHS
+  /opt/homebrew/opt/opencv/lib/cmake/opencv4
+)
 
 add_library(${PROJECT_NAME} SHARED
   src/burger.cpp
